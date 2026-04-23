@@ -31,7 +31,7 @@ function displayTask(){
     tasks.forEach((item,index)=>{
         list.innerHTML += `
             <tr>
-                <td>${index + 1}<td>
+                <td>${index + 1}</td>
                 <td>${item.task}</td>
                 <td>${item.des}</td>
                 <td>
@@ -45,7 +45,7 @@ function displayTask(){
 
 function editTask(index){
     let newTask = prompt("Edit your task", tasks[index].task);
-    let newDes = prompt("Edit your description",des[index].des);
+    let newDes = prompt("Edit your description", tasks[index].des);
 
     if(newTask !== null && newTask !== "" && newDes !== null && newDes !== ""){
         tasks[index].task = newTask;
