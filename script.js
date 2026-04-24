@@ -17,6 +17,8 @@ function addTask(){
         des:des
     });
 
+    saveToLocalStorage();
+
     taskField.value = "";
     desFeild.value = "";
 
@@ -50,15 +52,27 @@ function editTask(index){
     if(newTask !== null && newTask !== "" && newDes !== null && newDes !== ""){
         tasks[index].task = newTask;
         tasks[index].des= newDes;
+        saveToLocalStorage();
         displayTask();
     }
 }
 
 function deleteTask(index){
     
-    tasks.splice((a,b)=>{
-        return a.task - b.des;
-    });
-
+    tasks.splice(index,1);
+saveToLocalStorage();
 displayTask();
 }
+
+function saveToLocalStorage(){
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function loadLocalStorage(){
+   let data = localStorage.getItem("tasks");
+    if(data){
+        tasks = JSON.parse(data);
+    }
+    displayTask();
+}
+window.onload = loadLocalStorage;
