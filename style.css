@@ -5,5 +5,9 @@
 }
 
 .card{
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background: linear-gradient(rgba(192, 192, 192, 0.374),rgba(200, 200, 200, 0.434)),url(assets/to-do.avif);
+    height: 100vh;
 }
+
+
